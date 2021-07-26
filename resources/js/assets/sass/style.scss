@@ -1,0 +1,20 @@
+@import "mixins";
+@import "variables";
+@import url("https://fonts.googleapis.com/css?family=Mukta:400,700");
+@import "reset";
+@import "main";
+@import "header";
+@import "navigation";
+@import "popup";
+@import "slider";
+@import "main";
+@import "news-events";
+@import "editor";
+@import "form";
+@import "featured";
+@import "hover";
+@import "footer";
+
+.owl-theme .owl-dots {
+  top: 0 !important;
+}

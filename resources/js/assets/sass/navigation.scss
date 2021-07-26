@@ -1,0 +1,387 @@
+                                                                        @import 'variables';
+                                                                        @import 'mixins';
+                                                                        // navigation 
+                                                                        .navigation_box {
+                                                                            display: flex;
+                                                                            margin: 0;
+                                                                            ul {
+                                                                                float: left;
+                                                                                margin: 0;
+                                                                                padding: 0;
+                                                                                width: $full-width;
+                                                                                li {
+                                                                                    list-style: none;
+                                                                                    margin: 0;
+                                                                                    padding: 0;
+                                                                                    float: left;
+                                                                                    ul {
+                                                                                        background: #222;
+                                                                                        li {
+                                                                                            width: $full-width;
+                                                                                            float: left;
+                                                                                            ul {
+                                                                                                top: 0;
+                                                                                                right: -$full-width;
+                                                                                                left: inherit;
+                                                                                            }
+                                                                                            a {
+                                                                                                font-size: 12px;
+                                                                                                line-height: 18px;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    a {
+                                                                                        background: #222;
+                                                                                        color: #ccc;
+                                                                                        &:hover {
+                                                                                            background: #555 !important;
+                                                                                            color: $white-bg;
+                                                                                        }
+                                                                                        &.show {
+                                                                                            a {
+                                                                                                background: #222;
+                                                                                                color: #ccc;
+                                                                                                &:hover {
+                                                                                                    background: #555 !important;
+                                                                                                    color: $white-bg;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    &.open {
+                                                                                        a {
+                                                                                            background: #e74c3c;
+                                                                                            color: $white-bg;
+                                                                                            &:hover {
+                                                                                                background: #e74c3c !important;
+                                                                                                color: $white-bg;
+                                                                                            }
+                                                                                        }
+                                                                                        ul {
+                                                                                            @include border-radius(0);
+                                                                                            background: #222;
+                                                                                            border: 0;
+                                                                                            @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+                                                                                            li {
+                                                                                                width: $full-width;
+                                                                                                float: left;
+                                                                                                border-top: 1px solid #444;
+                                                                                                &:first-child {
+                                                                                                    border-top: 0;
+                                                                                                }
+                                                                                                & .dropdown-toggle {
+                                                                                                    &:after {
+                                                                                                        @include transform(rotate(-90deg));
+                                                                                                    }
+                                                                                                }
+                                                                                                ul {
+                                                                                                    li {
+                                                                                                        & .dropdown-toggle {
+                                                                                                            &:after {
+                                                                                                                @include transform(rotate(-90deg));
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                                a {
+                                                                                                    color: #888;
+                                                                                                    padding: 6px 16px;
+                                                                                                    font-size: 16px;
+                                                                                                    line-height: 20px;
+                                                                                                    background: #222;
+                                                                                                    &:hover {
+                                                                                                        background: #333 !important;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    a {
+                                                                                        font-size: 18px;
+                                                                                        color: #ddd;
+                                                                                        font-weight: $regular;
+                                                                                        padding: 9px 16px;
+                                                                                        display: block;
+                                                                                        line-height: 32px;
+                                                                                        &.selected {
+                                                                                            background: #e74c3c;
+                                                                                            color: $white-bg;
+                                                                                        }
+                                                                                        &:hover {
+                                                                                            background: #e74c3c;
+                                                                                            color: $white-bg;
+                                                                                        }
+                                                                                    }
+                                                                                    &.search {
+                                                                                        float: right;
+                                                                                        position: relative;
+                                                                                        & .left-icon {
+                                                                                            position: relative;
+                                                                                            top: 5px;
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            // sub navigation
+                                                                            &.sub-navigation {
+                                                                                border-bottom: 1px solid #ccc;
+                                                                                margin-top: 0;
+                                                                                background: none;
+                                                                                ul {
+                                                                                    li {
+                                                                                        a {
+                                                                                            color: $green-bg;
+                                                                                            font-size: 16px;
+                                                                                            padding: 10px 14px;
+                                                                                            line-height: 22px;
+                                                                                            -webkit-transform: perspective(1px) translateZ(0);
+                                                                                            transform: perspective(1px) translateZ(0);
+                                                                                            box-shadow: 0 0 1px transparent;
+                                                                                            position: relative;
+                                                                                            &:before {
+                                                                                                content: "";
+                                                                                                position: absolute;
+                                                                                                z-index: -1;
+                                                                                                left: 50%;
+                                                                                                right: 50%;
+                                                                                                bottom: 0;
+                                                                                                background: $link-color;
+                                                                                                height: 2px;
+                                                                                                -webkit-transition-property: left, right;
+                                                                                                transition-property: left, right;
+                                                                                                -webkit-transition-duration: 0.3s;
+                                                                                                transition-duration: 0.3s;
+                                                                                                -webkit-transition-timing-function: ease-out;
+                                                                                                transition-timing-function: ease-out;
+                                                                                            }
+                                                                                            &:hover {
+                                                                                                background: $white-bg;
+                                                                                                color: $link-color;
+                                                                                                &:before {
+                                                                                                    left: 0;
+                                                                                                    right: 0;
+                                                                                                }
+                                                                                            }
+                                                                                            &.active-menu {
+                                                                                                &:before {
+                                                                                                    left: 0;
+                                                                                                    width: $full-width;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        // radio css
+                                                                        .top-nav-box {
+                                                                            & .navigation_box {
+                                                                                display: flex;
+                                                                                background: none;
+                                                                                margin: 0;
+                                                                                ul {
+                                                                                    float: left;
+                                                                                    margin: 0;
+                                                                                    padding: 0;
+                                                                                    width: $full-width;
+                                                                                    li {
+                                                                                        list-style: none;
+                                                                                        margin: 0;
+                                                                                        padding: 0;
+                                                                                        float: left;
+                                                                                        ul {
+                                                                                            background: #222;
+                                                                                            li {
+                                                                                                a {
+                                                                                                    background: #222;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        &.open {
+                                                                                            a {
+                                                                                                background: #222;
+                                                                                                color: $white-bg;
+                                                                                                &:hover {
+                                                                                                    background: #333 !important;
+                                                                                                    color: $white-bg;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        a {
+                                                                                            color: $white-bg;
+                                                                                            font-size: 14px;
+                                                                                            padding: 4px 12px;
+                                                                                            background: #e74c3c;
+                                                                                            &:hover {
+                                                                                                background: $top-nav-bg;
+                                                                                                color: $white-bg;
+                                                                                            }
+                                                                                            &.active-nav {
+                                                                                                background: $top-nav-bg;
+                                                                                                color: $white-bg;
+                                                                                            }
+                                                                                        }
+                                                                                        &.live-btn {
+                                                                                            a {
+                                                                                                background: $live-bg;
+                                                                                                color: #222;
+                                                                                                line-height: 10px;
+                                                                                                text-transform: uppercase;
+                                                                                                margin-top: 10px;
+                                                                                                height: 18px;
+                                                                                                margin-left: 10px;
+                                                                                                @include border-radius(35px);
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    ul {
+                                                                                        li {
+                                                                                            ul {
+                                                                                                top: 0;
+                                                                                                right: -$full-width;
+                                                                                                left: inherit;
+                                                                                            }
+                                                                                            a {
+                                                                                                color: #888;
+                                                                                                font-size: 14px !important;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            .calendar-box {
+                                                                                text-align: right;
+                                                                                padding-top: 6px;
+                                                                                & .current-date {
+                                                                                    color: $white-bg;
+                                                                                    &.current-time {
+                                                                                        margin-right: 0;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        .main-menu {
+                                                                            background: $main-nav-bg;
+                                                                            border-bottom: 4px solid #e74c3c;
+                                                                        }
+                                                                        
+                                                                        .dropdown-toggle {
+                                                                            &:after {
+                                                                                top: 2px;
+                                                                                position: relative;
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        // slide nav
+                                                                        .mm-menu {
+                                                                            background: #222 !important;
+                                                                            opacity: 1;
+                                                                            &.active {
+                                                                                opacity: 1;
+                                                                            }
+                                                                            & .nav-title {
+                                                                                font-size: 14px;
+                                                                                text-transform: uppercase;
+                                                                                color: #888;
+                                                                                background: $white-bg;
+                                                                                display: inline-block;
+                                                                                width: $full-width;
+                                                                                padding: 10px 20px;
+                                                                            }
+                                                                            .search-site {
+                                                                                display: block !important;
+                                                                                position: relative;
+                                                                                float: left;
+                                                                                right: 0;
+                                                                                @include box-shadow (none);
+                                                                            }
+                                                                            & .navigation_box {
+                                                                                ul {
+                                                                                    li {
+                                                                                        float: left;
+                                                                                        width: $full-width;
+                                                                                        a {
+                                                                                            font-size: 16px;
+                                                                                            padding: 10px 20px;
+                                                                                            color: $white-bg;
+                                                                                            border-top: 1px solid #333;
+                                                                                            line-height: 20px;
+                                                                                        }
+                                                                                        &.search {
+                                                                                            display: none;
+                                                                                        }
+                                                                                        ul {
+                                                                                            display: block;
+                                                                                            background: none;
+                                                                                            position: relative !important;
+                                                                                            top: 0;
+                                                                                            border-radius: 0;
+                                                                                            border: 0;
+                                                                                            border: 0;
+                                                                                            @include transform(none !important);
+                                                                                            ul {
+                                                                                                right: 0;
+                                                                                            }
+                                                                                        }
+                                                                                        &.show {
+                                                                                            a {
+                                                                                                background: none;
+                                                                                                &:hover {
+                                                                                                    background: #222 !important;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                &.tops {
+                                                                                    background: #e74c3c;
+                                                                                    float: left;
+                                                                                    width: $full-width;
+                                                                                    ul {
+                                                                                        li {
+                                                                                            a {
+                                                                                                background: #e74c3c;
+                                                                                                &:hover {
+                                                                                                    background: #222 !important;
+                                                                                                }
+                                                                                            }
+                                                                                            &.live-btn {
+                                                                                                a {
+                                                                                                    background: #ffdb3a;
+                                                                                                    color: #222;
+                                                                                                    line-height: 20px;
+                                                                                                    text-transform: uppercase;
+                                                                                                    margin-bottom: 10px;
+                                                                                                    padding: 5px 20px;
+                                                                                                    margin-left: 18px;
+                                                                                                    margin-top: 13px;
+                                                                                                    display: table;
+                                                                                                    @include border-radius(35px);
+                                                                                                    &:hover {
+                                                                                                        background: #ffdb3a !important;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                &.mains {
+                                                                                    background: #222;
+                                                                                    float: left;
+                                                                                    width: $full-width;
+                                                                                    ul {
+                                                                                        li {
+                                                                                            a {
+                                                                                                color: $white-bg;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        .mm-menu-open {
+                                                                            overflow: hidden;
+                                                                        }

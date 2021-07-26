@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+a {
+  color: $link-color;
+  outline: $no-outline;
+  text-decoration: $none;
+  @include transition(all 0.3s ease-in-out);
+  display: inline;
+}
+
+a:hover {
+  color: $hover-color;
+  @include transition(all 0.3s ease-in-out);
+  text-decoration: none;
+}
+
+a:visited,
+a:acitve {
+  text-decoration: $none;
+}
+
+a:active {
+  color: $link-color;
+}
+
+a:focus {
+  text-decoration: $none;
+  outline: $no-outline;
+}
+
+a img,
+img {
+  border: $no-border;
+}
+
+p {
+  padding: 10px 0;
+}
+
+object {
+  outline: $no-outline;
+  border: $no-border;
+  float: left;
+}
+
+button:focus {
+  outline: $no-outline;
+}
+
+* {
+  outline: $no-outline;
+  margin: $no-margin;
+  padding: $no-padding;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+}
+
+body {
+  margin: $no-margin;
+  padding: $no-padding;
+  font-family: $primary-font;
+  font-size: $body-text;
+  line-height: 32px;
+  font-weight: $regular;
+  color: $body-color;
+  background: $body-bg;
+  position: relative;
+  z-index: -1;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// pagination
+.pagination {
+  margin: 0px;
+//   display: inline-block;
+  width: 100%;
+  padding: 70px 0 10px 0;
+  text-align: center;
+  a {
+    background: #f3efef;
+    text-decoration: none;
+    color: #757575;
+    padding: 0 10px;
+    margin: 0 2px;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px 15px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include border-radius(20px);
+  }
+  a:hover {
+    color: $white-bg;
+    background: $hover-color;
+  }
+  & .current {
+    background: #ccc;
+    text-decoration: none;
+    color: $text-color;
+    padding: 0 10px;
+    margin: 0 0 0px 0;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px 17px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include border-radius(20px);
+  }
+}
+
+.section {
+  display: inline-block;
+  width: $full-width;
+}
+
+#content {
+  display: inline-block;
+  width: $full-width;
+  margin: 0 auto;
+}
